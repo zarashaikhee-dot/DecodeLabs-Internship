@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "author": "Zara Sheikh",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 38.4, "left": 110.44, "attrs": {} },
+    { "type": "wokwi-hc-sr04", "id": "ultrasonic1", "top": -36.9, "left": -138.5, "attrs": {} },
+    { "type": "wokwi-led", "id": "led1", "top": 73.2, "left": -5.8, "attrs": { "color": "red" } }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "ultrasonic1:VCC", "esp:5V", "red", [ "v182.4", "h182.25" ] ],
+    [ "esp:GND.1", "ultrasonic1:GND", "black", [ "h0" ] ],
+    [ "esp:5", "ultrasonic1:TRIG", "green", [ "h86.4", "v115.2", "h-230.4", "v0", "h-105.6" ] ],
+    [ "esp:18", "ultrasonic1:ECHO", "blue", [ "h124.8", "v9.6", "v144", "h-384", "v-240" ] ],
+    [ "esp:2", "led1:A", "purple", [ "h38.4", "v57.6", "h-230.4" ] ],
+    [ "led1:C", "esp:GND.1", "orange", [ "v76.8", "h105.85" ] ]
+  ],
+  "dependencies": {}
+}
